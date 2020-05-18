@@ -8,7 +8,7 @@ app.get('/', function (req, res) {
 })
 
 function generateRandomId(minId, maxId) {
-    return Math.floor(minId + Math.random() * maxId);
+    return Math.floor(Math.random() * (maxId - minId + 1)) + minId;
 }
 
 app.listen(3000)
