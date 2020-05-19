@@ -9,6 +9,6 @@ app.use(helmet());
 app.listen(3000)
 
 app.get('/', function (req, res) {
-    res.send(PriorunController.generateRandomId());
+    res.send(PriorunController.generateRandomId().toString());
 });
 
