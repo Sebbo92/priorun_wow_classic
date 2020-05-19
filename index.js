@@ -1,14 +1,13 @@
-const express = require('express')
-const app = express()
+const express = require('express');
+const app = express();
+const routes = require('./routes/routes');
+const helmet = require('helmet');
 
-app.get('/', function (req, res) {
-    const minId = 1000;
-    const maxId = 9999;
-    res.send('PrioRun:' + (generateRandomId(minId, maxId)));
-})
 
-function generateRandomId(minId, maxId) {
-    return Math.floor(Math.random() * (maxId - minId + 1)) + minId;
-}
+
+app.use('/', routes);
+app.use(helmet());
+
+
 
 app.listen(3000)
